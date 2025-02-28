@@ -1,0 +1,15 @@
+{% extends "core/base.html" %} {% block content %} {% if course_list %}
+<div class="container_fluid p-5 bg-light">
+  <h2>Courses</h2>
+
+  {% for course in course_list %}
+  <div class="card m-2 p-2">
+    <h2><a href="{% url course.app_name|add:':index' %}" > {{ course.name }}<a></h2>
+    <p class="fst-italic">{{ course.description }}</p>
+  </div>
+  {% endfor %} {% else %}
+  <p>No Courses are available.</p>
+  {% endif %}
+</div>
+{% endblock %}
+

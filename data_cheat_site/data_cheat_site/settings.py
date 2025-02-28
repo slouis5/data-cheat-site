@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core.apps.CoreConfig',
+    'cheat_sql.apps.CheatSqlConfig',
+    'cheat_py.apps.CheatPyConfig',
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [

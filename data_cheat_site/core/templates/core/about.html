@@ -1,0 +1,19 @@
+{% extends "core/base.html" %} 
+{% block title %} DCS5.0 |About {% endblock %}
+
+{% block content %} {% if contributors %}
+<div class="container_fluid p-5 bg-light">
+  <h2>Contributors</h2>
+
+  {% for contributor in contributors %}
+  <div class="card m-2 p-2">
+    <p>{{ contributor.name }}</p>
+    <p>{{ contributor.position }}</p>
+    <p>{{ contributor.description }}</p>
+  </div>
+  {% endfor %} {% else %}
+  <p>No Contributor are available.</p>
+  {% endif %}
+</div>
+{% endblock %}
+
