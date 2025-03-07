@@ -1,0 +1,18 @@
+{% extends 'cheat_sql/base.html' %}
+
+{% block content %}
+  <div class="container_fluid p-5 bg-light">
+    <div class="card">
+      <h2 class="text-start">Chapter {{ Chapter.chapter_number }}: {{ chapter.chapter_name }}</h2>
+      <p class="text-start">{{ chapter.chapter_description }}</p>
+    </div>
+    <div class="container_fluid p-5 bg-light">
+      {% for lesson in lessons %}
+        <div class="card">
+          <h2 class="text-start"><a href="/sql/{{chapter.slug}}/{{lesson.slug}}">Lesson {{ lesson.lesson_number }}: {{ lesson.lesson_name }}</a></h2>
+          <p class="text-start">{{ lesson.lesson_description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

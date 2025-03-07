@@ -62,20 +62,24 @@ DEBUG = "True"
 DB_NAME  = "<bd_name>"
 DB_USER = "<user_name>"
 DB_PASSWORD = "***********"
-HOST = "localhost"
+DB_HOST = "localhost"
 PORT = "5432"
 SECRET_KEY = "************************************************************"
 ~~~
 
 _(to generate a secret key, you can open a python terminal and type those comand lines below):_
 ~~~bash
-$ python
+
+python
+
 >>> from django.core.management import utils
 >>> print(utils.get_random_secret_key())
 ~~~
+Don't forget to fill the SECRET_KEY value in the .env file you created by the generated SECRET_KEY.
 
-
-6. **Apply migrations and migrate**
+6. **Apply migrations and migrate**  
+6.1. Modify the ENGINE value in the settings.py file accordingly to the RDBMS you are using if it's not Postgres ([See here](https://docs.djangoproject.com/en/5.1/ref/settings/) in ENGINE section).  
+6.2 From the terminal, navigate to the data_cheat_site folder containing the settings.py file and run the following lines:
 ~~~bash
 # creating tables in the database from models
 
